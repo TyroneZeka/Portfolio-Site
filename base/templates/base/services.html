@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+{% if service %}
+<section class="site-section" id="section-about" >
+    <div class="container">
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
+                <img src="{{service.thumbnail.url}}" alt="Image placeholder" class="img-fluid img-thumbnail">
+            </div>
+            <div class="col-lg-5 pl-lg-5">
+                <div class="section-heading">
+                    <h2>About <strong>{{service.title}}</strong></h2>
+                </div>
+                <p class="lead">{{service.body|linebreaksbr}}</p>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+{% else %}
+<section class="site-section" id="section-about">
+    <div class="container">
+        <div class="row mb-5 align-items-center">
+            <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
+                <img src="{{project.thumbnail.url}}" alt="Image placeholder" class="img-fluid img-thumbnail">
+            </div>
+            <div class="col-lg-5 pl-lg-5">
+                <div class="section-heading">
+                    <h2>About <strong>{{project.title}}</strong></h2>
+                </div>
+                <p class="">{{project.description|linebreaksbr}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+{% endblock content %}

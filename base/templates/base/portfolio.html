@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+
+{% include 'navbar.html' %}
+
+{% block content %}
+
+<section class="site-section" id="section-portfolio">
+	<div class="container">
+		<div class="row">
+			<div class="section-heading text-center col-md-12">
+				<h2>Featured <strong>Portfolio</strong></h2>
+			</div>
+		</div>
+		<div class="filters">
+			<ul>
+				<li class="active">
+					<form action="{% url 'portfolio' %}" method="get">	
+						<button type="submit" style="background-color: #222222; border: none;">
+							<input type="button" value="All" style="background-color: #222222; color: honeydew; border: none; width: 30px;">
+						</button>
+					</form>
+				</li>
+
+
+				{% for tag in tags %}
+				<button class="nav_tag" style="background-color: #222222; border: none;">
+					<li class="active" >
+						<form action="{% url 'portfolio' %}" method="get">
+							<input type="submit" value="{{tag}}" name="query" style="background-color: #222222; border: none; color: honeydew;" />
+						</form>
+					</li>
+				</button>		
+				{% endfor %}			
+			</ul>
+		</div>
+		<div class="filters-content">
+			<div class="row grid">
+
+				{% for project in projects %}
+
+				<div class="single-portfolio col-sm-4 all mockup">
+					<div class="relative">
+						<div class="thumb">
+							<div class="overlay overlay-bg"></div>
+							<img class=" img-fluid image-wrapper img-thumbnail" src="{{project.thumbnail.url}}" alt="thumbnail>
+						</div>
+						<div class="p-inner">
+							<h4>{{project.title}}</h4>
+							<a href="{% url 'services' project.slug %}" target=""><div class="cat">Info</div></a>
+							{% if project.demo_link %}
+								<a href="{{project.demo_link}}" target="_blank"><div class="cat">Live Demo</div></a>
+							{% endif %}
+						</div>                                              
+					</div>
+					                         
+				</div>
+
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+	<section class="site-section" id="section-about">
+		<div class="container">
+			<div class="row mb-5 align-items-center">
+				<div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
+					<img src="{% static 'images/tyrone1.jpg' %}" alt="Image placeholder" class="img-fluid">
+				</div>
+				<div class="col-lg-5 pl-lg-5">
+					<div class="section-heading">
+						<h2>About <strong>Tyrone</strong></h2>
+					</div>
+					<p class="lead">I graduated top of my class in Computer Science at Ocean University of China. </p>
+					<p class="mb-5  ">My Biggest flex will probably be my ability to learn difficulty things fast.Born and raised in the small town of Chegutu in the heart of Mashonaland West Province of Zimbabwe, I have always had a hunger to learn. I enjoy learning and it has led me to be a great developer as most of the things I know were self taught.I started coding at the age of 15 and I have never stopped since then. I like to challege myself and learn new things</p>
+
+					<p>
+						<a href="#section-contact" class="btn btn-primary px-4 py-2 btn-sm smoothscroll">Hire Me</a>
+						<a href="{% url 'downloadfile' %}" class="btn btn-secondary px-4 py-2 btn-sm">Download CV</a>
+					</p>
+				</div>
+			</div>
+
+
+		</div>
+	</section>
+
+    <section class="site-section " id="section-resume">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 mb-5">
+					<div class="section-heading text-center">
+						<h2>My <strong>Resume</strong></h2>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<h2 class="mb-5">Education</h2>
+					<div class="resume-item mb-4">
+						<span class="date"><span class="icon-calendar"></span> Sept 2018 - Present</span>
+						<h3>Bsc in Computer Science and Information Technology</h3>
+						<p>I will be graduating with a BSc in Computer Science and Information Technology in June of 2022. I spent 4 years in China having the best knowledge from top Professors in China. </p>
+						<span class="school">Ocean University of China</span>
+					</div>
+
+					<div class="resume-item mb-4">
+						<span class="date"><span class="icon-calendar"></span> Sept 2022 - </span>
+						<h3>MSc in Software Engineering </h3>
+						<p>Harbin Institute of Technology is one of the best schools for Technology related studies in the world and I am very happy to be studying at this amazing institute for my Masters Program. China has been a home away from home for me and I am glad to be learning all this from this amazing country. </p>
+						<span class="school">Harbin Institute of Technology(HIT)</span>
+					</div>
+
+				</div>
+				<div class="col-md-6">
+
+
+					<h2 class="mb-5">Experience</h2>
+
+					<div class="resume-item mb-4">
+						<span class="date"><span class="icon-calendar"></span> January 2018 - Present</span>
+						<h3>Flutter Developer </h3>
+						<p>I have been developing mobile apps using the Flutter framework from Google for the past 2 years. I have been able to launch a mobile app for online shopping in Zimbabwe from Diaspora.</p>
+						<span class="school">Udemy</span>
+					</div>
+
+				
+					<div class="resume-item mb-4">
+						<span class="date"><span class="icon-calendar"></span> April 2021 - Present</span>
+						<h3>Django Developer</h3>
+						<p>I recently started my journey as a django developer. I have always been fascinated by the Python language and I have used Flask before whch is a lighter framework for mobile development but  recently started using django for heavy duty web development and API development.</p>
+						<span class="school">Udemy</span>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</section> <!-- .section -->
+
+	{% endblock %}

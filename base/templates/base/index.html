@@ -1,0 +1,48 @@
+{% extends 'main.html' %}
+
+	{% include 'navbar.html' %}
+
+	{% block content %}
+
+	<section class="site-hero" style="background-image: url(images/tyrone1.jpg);" id="section-home" data-stellar-background-ratio="0.5">
+		<div class="container">
+			<div class="row intro-text align-items-center justify-content-center">
+				<div class="col-md-10 text-center pt-5">
+
+					<h1 class="site-heading site-animate">Hello, I'm <strong class="d-block">Tyrone Zeka</strong></h1>
+					<strong class="d-block text-white text-uppercase letter-spacing">and this is My World</strong>
+
+				</div>
+			</div>
+		</div>
+	</section> <!-- section -->
+
+	<section class="site-section pb-0"  id="section-services">
+		<div class="container">
+
+			<div class="row mb-4">
+				<div class="col-md-12">
+					<div class="section-heading text-center">
+						<a href="#"><h2>My <strong>Services</strong></h2></a>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			{% if services.count > 3 %}
+				
+			{% endif %}
+			{% for service in services %}
+				<div class="col-md-6 col-lg-4 text-center mb-5">
+					<div class="site-service-item site-animate" data-animate-effect="fadeIn">
+						<img src="{{ service.thumbnail.url }}" alt="placeholder-img" class="image-wrapper img-thumbnail">
+						<h3 class="mb-4">{{service.title}}</h3>
+						<p>{{service.body| slice:"75"}}...</p>
+						<p><a href="{% url 'services' service.slug %}" class="site-link">Learn More <i class="icon-chevron-right"></i></a></p>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	{% endblock content %}

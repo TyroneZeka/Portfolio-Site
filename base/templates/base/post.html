@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+        <!-- Page Header-->
+        <section class="site-section" id="section-about" >
+        
+        <!-- <img src="{{post.thumbnail.url}}" alt="Image placeholder" class="section-blog-img"> -->
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5" style="background-image: url({{post.thumbnail.url}});">
+                <h1>{{post.title}}</h1>
+                            <h2 class="subheading">{{post.subtitle}}</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#">{{post.author}}</a>
+                                on {{post.created}}
+                            </span>
+                <p>
+                    {{ post.body|linebreaksbr }}
+                </p>
+                
+            </div>
+        </article>
+    </section>
+        <script src="{% static 'js/blog.js' %}"></script>
+{% endblock %}
