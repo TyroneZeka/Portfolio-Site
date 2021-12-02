@@ -26,8 +26,8 @@ from decouple import config
 
 SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
 
-DEBUG = os.getenv('DEBUG_VAL',True)
-# DEBUG = True
+# DEBUG = os.getenv('DEBUG_VAL',True)
+DEBUG = False
 
 # EMAIL SETUP WITH GMAIL
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
