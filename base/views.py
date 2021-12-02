@@ -3,14 +3,14 @@ from django.http import HttpResponse, response, StreamingHttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
 from wsgiref.util import FileWrapper
-from .models import Services,Post,Tag, Project
+from .models import Service,Post,Tag, Project
 from .utils import searchProjects
 import mimetypes
 import os
 
 # Create your views here.
 def home(request):
-    services = Services.objects.all()
+    services = Service.objects.all()
     context = {'services':services}
     return render(request,'base/index.html',context)
 
@@ -54,7 +54,7 @@ def contact(request):
 def services(request,pk):
     # url can be used to for both services and Projects hence the try catch block
     try:
-        service = Services.objects.get(slug=pk)
+        service = Service.objects.get(slug=pk)
         context = {'service':service}
     except:
         project = Project.objects.get(slug=pk)
