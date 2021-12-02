@@ -27,6 +27,7 @@ from decouple import config
 SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
 
 DEBUG = os.getenv('DEBUG_VAL',True)
+# DEBUG = True
 
 # EMAIL SETUP WITH GMAIL
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
@@ -54,7 +55,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
-    'cksnoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -157,5 +158,5 @@ STATICFILES_DIRS=[
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
