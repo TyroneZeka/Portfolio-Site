@@ -26,7 +26,7 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class Services(models.Model):
+class Service(models.Model):
     title = models.CharField(max_length=255)
     thumbnail = models.ImageField(null=True,blank=True,default='default.jpg')
     body = models.TextField(null = True,blank = True)
