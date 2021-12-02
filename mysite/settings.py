@@ -26,8 +26,8 @@ from decouple import config
 
 SECRET_KEY = os.getenv('SECRET_KEY', config('SECRET_KEY'))
 
-# DEBUG = os.getenv('DEBUG_VAL',True)
-DEBUG = True
+DEBUG = os.getenv('DEBUG_VAL',True)
+# DEBUG = True
 
 # EMAIL SETUP WITH GMAIL
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
@@ -91,12 +91,25 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd4ocku49mp5ds5',
+        'USER': 'ntumzkfjeqmpvr',
+        'PASSWORD': 'd4d4b74833b54c0c884d471428ecbf23ec6c609b44da21241b38efd9635e3e78',
+        'HOST': 'ec2-34-195-69-118.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
 
 import dj_database_url 
 prod_db  =  dj_database_url.config(conn_max_age=600)
@@ -157,5 +170,5 @@ STATICFILES_DIRS=[
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Activate Django-Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
