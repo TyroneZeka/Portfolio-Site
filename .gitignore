@@ -29,8 +29,6 @@ var/
 
 
 db.sqlite3
-migrations/
-media/
 
 __pycache__/
 mysite/.env
